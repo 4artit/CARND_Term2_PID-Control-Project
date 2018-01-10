@@ -1,0 +1,12 @@
+***Describe the effect each of the P, I, D components had in your implementation.***
+
+P Control(Proportional) : This component depends on cte value. If error rate is large, this controls the car using large reverse value. If error rate is small, this controls the car using small reverse value.
+
+I Control(Integral) : This component depends on cumulative error. If p controller is nearby reference, this has little effect. So, If use I component, this add error every moments and fix the value until same as reference.
+
+D Control(Derivative) : This component depends on gap of  present error and previous error. This can reduce overshooting.
+
+
+***Describe how the final hyperparameters were chosen.***
+
+I used manual tuning. First, I found suitable Kp hyperparameter. And Next, tuned Ki. Finally, tuned Kd for reducing overshooting. After that, I tuned a little every hyperparameters for find best solution.
